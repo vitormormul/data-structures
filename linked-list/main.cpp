@@ -12,11 +12,13 @@ bool test_node()
 
 bool test_list()
 {
-    List list = List();
-
+    int expected = 3;
+    List *list = new List;
+    list->insert(3);
+    return list->getHead().getData() == expected;
 }
 
 int main()
 {
-    cout << test_node();
+    cout << test_node() && test_list();
 };

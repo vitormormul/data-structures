@@ -43,4 +43,22 @@ public:
     head = NULL;
     tail = NULL;        
     }
+
+    Node getHead()
+    {
+        return *this->head;
+    }
+
+    void insert(int data)
+    {
+        Node node = Node(data);
+        if (isEmpty())
+        {
+            tail = &node;
+        }
+        else
+            node.setNext(head);
+        head = &node;
+        
+    }
 };
