@@ -26,3 +26,21 @@ public:
         next = newNode;
     }
 };
+
+class List
+{
+private:
+    Node *head;
+    Node *tail;
+
+    bool isEmpty()
+    {
+        return this->head == NULL;
+    }
+public:
+    List()
+    {
+    head = NULL;
+    tail = NULL;        
+    }
+};

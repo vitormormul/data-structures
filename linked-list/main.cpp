@@ -10,6 +10,12 @@ bool test_node()
     return node.getData() == expected;
 }
 
+bool test_list()
+{
+    List list = List();
+
+}
+
 int main()
 {
     cout << test_node();
