@@ -1,29 +1,13 @@
 class Node
 {
-private:
+public:
     int data;
     Node *next;
 
-public:
     Node(int data)
     {
         this->data = data;
         this->next = NULL;
-    }
-
-    int getData()
-    {
-        return data;
-    }
-
-    Node* getNext()
-    {
-        return next;
-    }
-
-    void setNext(Node* newNode)
-    {
-        next = newNode;
     }
 };
 
@@ -57,8 +41,7 @@ public:
             tail = &node;
         }
         else
-            node.setNext(head);
+            node.next = head;
         head = &node;
-        
     }
 };

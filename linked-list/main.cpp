@@ -7,7 +7,7 @@ bool test_node()
 {
     int expected = 3;
     Node node = Node(3);
-    return node.getData() == expected;
+    return node.data == expected;
 }
 
 bool test_list()
@@ -15,7 +15,7 @@ bool test_list()
     int expected = 3;
     List *list = new List;
     list->insert(3);
-    return list->getHead().getData() == expected;
+    return list->getHead().data == expected;
 }
 
 int main()
