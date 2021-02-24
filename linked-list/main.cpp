@@ -13,12 +13,23 @@ bool test_node()
 bool test_list()
 {
     int expected = 3;
-    List *list = new List;
-    list->insert(3);
-    return list->getHead().data == expected;
+    List list = List();
+    list.insert(3);
+    return list.head->data == expected;
+}
+
+bool test_list_show()
+{
+    List list = List();
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    list.insert(5);
+    list.show();
 }
 
 int main()
 {
+    test_list_show();
     cout << test_node() && test_list();
 };

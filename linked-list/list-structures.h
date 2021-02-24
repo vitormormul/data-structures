@@ -1,3 +1,7 @@
+#include <iostream>
+
+using namespace std;
+
 class Node
 {
 public:
@@ -7,41 +11,52 @@ public:
     Node(int data)
     {
         this->data = data;
-        this->next = NULL;
+        this->next = nullptr;
     }
 };
 
 class List
 {
-private:
+public:
     Node *head;
     Node *tail;
 
     bool isEmpty()
     {
-        return this->head == NULL;
-    }
-public:
-    List()
-    {
-    head = NULL;
-    tail = NULL;        
+        return this->head == nullptr;
     }
 
-    Node getHead()
+    List()
     {
-        return *this->head;
+    head = nullptr;
+    tail = nullptr;        
     }
 
     void insert(int data)
     {
-        Node node = Node(data);
+        Node *node = new Node(data);
         if (isEmpty())
         {
-            tail = &node;
+            this->tail = node;
         }
         else
-            node.next = head;
-        head = &node;
+            node->next = this->head;
+        this->head = node;
+    }
+
+    void show()
+    {
+        Node *node;
+        if (isEmpty())
+        {
+            cout << "Empty list.";
+            return;
+        }
+        
+        while (node != NULL)
+        {
+            cout << node->data << endl;
+            node = node->next;
+        }
     }
 };
