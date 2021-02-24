@@ -53,10 +53,27 @@ public:
             return;
         }
         
-        while (node != NULL)
+        while (node != nullptr)
         {
             cout << node->data << endl;
             node = node->next;
         }
+    }
+
+    Node* find(int data)
+    {
+        Node *prev = this->head;
+        Node *node = prev->next;
+
+        while (node != nullptr)
+        {
+            if (node->data == data)
+            {
+                return prev;
+            }
+            prev = node;
+            node = node->next;
+        }
+        return this->head;
     }
 };
