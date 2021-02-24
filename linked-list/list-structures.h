@@ -52,7 +52,7 @@ public:
             cout << "Empty list.";
             return;
         }
-        
+        cout << "List:" << endl;
         while (node != nullptr)
         {
             cout << node->data << endl;
@@ -74,6 +74,28 @@ public:
             prev = node;
             node = node->next;
         }
-        return this->head;
+        return this->tail->next;
+    }
+
+    void remove(int data)
+    {
+        Node *node = find(data);
+        Node *next = node->next;
+        node->next = next->next;
+    }
+
+    int index(int data)
+    {
+        if (!find(data))
+        {
+            return -1;
+        }
+        Node *node = head;
+        int i;
+        for (i = 0; node->data != data; i++)
+        {
+            node = node->next;
+        }
+        return i;
     }
 };

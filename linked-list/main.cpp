@@ -43,10 +43,37 @@ bool test_list_find()
     return list.find(2)->data == expected;
 }
 
+bool test_list_remove()
+{
+    int expected = 3;
+    List list = List();
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    list.insert(5);
+    list.show();
+    list.remove(4);
+    list.show();
+    return 1;
+}
+
+void test_list_index()
+{
+    List list = List();
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    list.insert(5);
+    list.show();
+    cout << list.index(3);
+}
+
 int main()
 {
-    cout << test_node() << endl;
-    cout << test_list() << endl;
-    cout << test_list_find() << endl;
-    cout << test_list_show() << endl;
+    //cout << test_node() << endl;
+    //cout << test_list() << endl;
+    //cout << test_list_find() << endl;
+    //cout << test_list_show() << endl;
+    //cout << test_list_remove() << endl;
+    test_list_index();
 };
