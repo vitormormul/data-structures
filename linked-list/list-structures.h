@@ -123,4 +123,12 @@ public:
         tail->next = node;
         this->tail = node;
     }
+
+    void insert_in(int index, int data)
+    {
+        Node *node = find(item(index)->data);
+        Node *newNode = new Node(data);
+        newNode->next = node->next;
+        node->next = newNode;
+    }
 };

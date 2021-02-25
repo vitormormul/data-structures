@@ -82,8 +82,22 @@ void test_list_item()
 void test_list_append()
 {
     List list = List();
-    
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    list.insert(5);
     list.append(1);
+    list.show();
+}
+
+void test_list_insert_in()
+{
+    List list = List();
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    list.insert(5);
+    list.insert_in(2, 0);
     list.show();
 }
 int main()
@@ -95,5 +109,6 @@ int main()
     //cout << test_list_remove() << endl;
     //test_list_index();
     //test_list_item();
-    test_list_append();
+    //test_list_append();
+    test_list_insert_in();
 };
