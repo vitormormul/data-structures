@@ -137,4 +137,11 @@ public:
         Node *node = find(item(index)->data);
         node->next = node->next->next;
     }
+
+    void drop()
+    {
+        Node *node = find(tail->data);
+        node->next = NULL;
+        tail = node;
+    }
 };

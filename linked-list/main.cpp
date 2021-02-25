@@ -112,6 +112,19 @@ void test_list_remove_from()
     list.remove_from(2);
     list.show();
 }
+
+void test_list_drop()
+{
+    List list = List();
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    list.insert(5);
+    list.show();
+    list.drop();
+    list.show();
+}
+
 int main()
 {
     //cout << test_node() << endl;
@@ -123,5 +136,6 @@ int main()
     //test_list_item();
     //test_list_append();
     //test_list_insert_in();
-    test_list_remove_from();
+    //test_list_remove_from();
+    test_list_drop();
 };
