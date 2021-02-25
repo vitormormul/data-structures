@@ -64,8 +64,19 @@ void test_list_index()
     list.insert(3);
     list.insert(4);
     list.insert(5);
-    list.show();
-    cout << list.index(3);
+    cout.flush();
+    cout << list.index(2);
+}
+
+void test_list_item()
+{
+    List list = List();
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    list.insert(5);
+    cout.flush();
+    cout << list.item(-1)->data << endl;
 }
 
 int main()
@@ -75,5 +86,6 @@ int main()
     //cout << test_list_find() << endl;
     //cout << test_list_show() << endl;
     //cout << test_list_remove() << endl;
-    test_list_index();
+    //test_list_index();
+    test_list_item();
 };

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <stdexcept>
 
 using namespace std;
 
@@ -74,7 +75,7 @@ public:
             prev = node;
             node = node->next;
         }
-        return this->tail->next;
+        throw invalid_argument("Data not found.");
     }
 
     void remove(int data)
@@ -86,10 +87,7 @@ public:
 
     int index(int data)
     {
-        if (!find(data))
-        {
-            return -1;
-        }
+        find(data);
         Node *node = head;
         int i;
         for (i = 0; node->data != data; i++)
@@ -97,5 +95,21 @@ public:
             node = node->next;
         }
         return i;
+    }
+
+    Node* item(int index)
+    {
+        if(index < 0)
+            throw invalid_argument("Index must be greater than or equal to zero.");
+        Node *node = head;
+        for (int i = 0; i < index; i++)
+        {
+            node = node->next;
+        }
+        if (node == nullptr)
+        {
+            throw invalid_argument("Index out of range.");
+        }
+        return node;
     }
 };
