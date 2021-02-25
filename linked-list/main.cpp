@@ -100,6 +100,18 @@ void test_list_insert_in()
     list.insert_in(2, 0);
     list.show();
 }
+
+void test_list_remove_from()
+{
+    List list = List();
+    list.insert(2);
+    list.insert(3);
+    list.insert(4);
+    list.insert(5);
+    list.show();
+    list.remove_from(2);
+    list.show();
+}
 int main()
 {
     //cout << test_node() << endl;
@@ -110,5 +122,6 @@ int main()
     //test_list_index();
     //test_list_item();
     //test_list_append();
-    test_list_insert_in();
+    //test_list_insert_in();
+    test_list_remove_from();
 };

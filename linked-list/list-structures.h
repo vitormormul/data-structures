@@ -131,4 +131,10 @@ public:
         newNode->next = node->next;
         node->next = newNode;
     }
+
+    void remove_from(int index)
+    {
+        Node *node = find(item(index)->data);
+        node->next = node->next->next;
+    }
 };
