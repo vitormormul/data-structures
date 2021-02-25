@@ -79,6 +79,13 @@ void test_list_item()
     cout << list.item(-1)->data << endl;
 }
 
+void test_list_append()
+{
+    List list = List();
+    
+    list.append(1);
+    list.show();
+}
 int main()
 {
     //cout << test_node() << endl;
@@ -87,5 +94,6 @@ int main()
     //cout << test_list_show() << endl;
     //cout << test_list_remove() << endl;
     //test_list_index();
-    test_list_item();
+    //test_list_item();
+    test_list_append();
 };

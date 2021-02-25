@@ -29,8 +29,8 @@ public:
 
     List()
     {
-    head = nullptr;
-    tail = nullptr;        
+        head = nullptr;
+        tail = nullptr;        
     }
 
     void insert(int data)
@@ -47,12 +47,11 @@ public:
 
     void show()
     {
-        Node *node;
         if (isEmpty())
         {
-            cout << "Empty list.";
-            return;
+            throw invalid_argument("Empty list.");
         }
+        Node *node = head;
         cout << "List:" << endl;
         while (node != nullptr)
         {
@@ -111,5 +110,17 @@ public:
             throw invalid_argument("Index out of range.");
         }
         return node;
+    }
+
+    void append(int data)
+    {
+        if(isEmpty())
+        {
+            insert(data);
+            return;
+        }
+        Node *node = new Node(data);
+        tail->next = node;
+        this->tail = node;
     }
 };
